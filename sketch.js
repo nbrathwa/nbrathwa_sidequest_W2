@@ -10,12 +10,12 @@ let blob3 = {
   // Visual properties
   r: 26, // Base radius
   points: 48, // Number of points used to draw the blob
-  wobble: 7, // Edge deformation amount
+  wobble: 9, // Edge deformation amount
   wobbleFreq: 0.9,
 
   // Time values for breathing animation
   t: 0,
-  tSpeed: 0.01,
+  tSpeed: 0.03,
 
   // Physics: velocity
   vx: 0, // Horizontal velocity
@@ -63,10 +63,10 @@ function setup() {
 }
 
 function draw() {
-  background(240);
+  background("#1B4D3E");
 
   // --- Draw all platforms ---
-  fill(200);
+  fill("#00A693");
   for (const p of platforms) {
     rect(p.x, p.y, p.w, p.h);
   }
@@ -154,7 +154,7 @@ function overlap(a, b) {
 
 // Draws the blob using Perlin noise for a soft, breathing effect
 function drawBlobCircle(b) {
-  fill(20, 120, 255);
+  fill("#32CD32");
   beginShape();
 
   for (let i = 0; i < b.points; i++) {
@@ -164,7 +164,7 @@ function drawBlobCircle(b) {
     const n = noise(
       cos(a) * b.wobbleFreq + 100,
       sin(a) * b.wobbleFreq + 100,
-      b.t,
+      b.t
     );
 
     const r = b.r + map(n, 0, 1, -b.wobble, b.wobble);
@@ -185,11 +185,3 @@ function keyPressed() {
     blob3.onGround = false;
   }
 }
-
-/* In-class tweaks for experimentation:
-   • Add a new platform:
-     platforms.push({ x: 220, y: floorY3 - 150, w: 80, h: 12 });
-
-   • “Ice” feel → frictionGround = 0.95
-   • “Sand” feel → frictionGround = 0.80
-*/

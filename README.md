@@ -19,6 +19,6 @@ N/A
 ## GenAI
 
 The code was written by Dr. Karen Cochrane but she used GenAI to write the comments.
-After forking the Repository written by Dr.Karen Cochrane and David Han, Nia Brathwaite did not use any GenAI to modify the code to showcase the emotion of envy.
+After forking the Repository written by Dr.Karen Cochrane and David Han, Nia Brathwaite did not use any GenAI to modify the code to showcase the emotion of envy. She used HEX Colour codes gained from https://htmlcolorcodes.com.
 
 ---

@@ -63,10 +63,10 @@ function setup() {
 }
 
 function draw() {
-  background("#1B4D3E");
+  background("#00A36C");
 
   // --- Draw all platforms ---
-  fill("#00A693");
+  fill("#4CBB17");
   for (const p of platforms) {
     rect(p.x, p.y, p.w, p.h);
   }
@@ -164,7 +164,7 @@ function drawBlobCircle(b) {
     const n = noise(
       cos(a) * b.wobbleFreq + 100,
       sin(a) * b.wobbleFreq + 100,
-      b.t
+      b.t,
     );
 
     const r = b.r + map(n, 0, 1, -b.wobble, b.wobble);
